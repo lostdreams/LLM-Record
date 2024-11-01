@@ -3,12 +3,26 @@
 # Framework & Tool
 
 
-[写在RAGFlow开源2万星标之际](https://zhuanlan.zhihu.com/p/2308262308)
+- RAGFlow [写在RAGFlow开源2万星标之际](https://zhuanlan.zhihu.com/p/2308262308)
+- LightRAG
+- GraphRAG  : [GraphRAG的替代者LightRAG](https://zhuanlan.zhihu.com/p/4013408342)
+- ModularRAG
+- Llamaindex
+- DBGPT 
 
 
 
+# Paper
 
-## PDF Praser
+- Hierarchical Retrieval-Augmented Generation Model with Rethink for Multi-hop Question Answering: 分层检索
+
+- [simRAG](https://zhuanlan.zhihu.com/p/3322421126): 联合微调 检索和问答
+- [R²AG:将检索信息融入RAG](https://zhuanlan.zhihu.com/p/4375976124)
+- [LATE CHUNKING; Accelerating Inference RAG； DIFFERENTIAL TRANSFORMER](https://www.zhihu.com/question/643138720/answer/19779780309)
+
+
+
+## 语料处理 - Praser &Split 
 
 最基础的就是PyPDF，ChtaDoc似乎不开源，此外还有 [PyMuPDF](https://zhuanlan.zhihu.com/p/517737462), 结构化的解析，参考阅读
 - [如何利用大模型技术将非结构化的PDF文档转换为结构化的知识图谱？](https://www.zhihu.com/question/2003498355/answer/14244267722),
@@ -17,11 +31,19 @@
 - [ChatPDF | LLM文档对话 | pdf解析关键问题](https://zhuanlan.zhihu.com/p/652975673)
 - [Using LlamaParse to Create Knowledge Graphs from ](https://neo4j.com/developer-blog/llamaparse-knowledge-graph-documents/)
 - [LangChain on LinkedIn: 🧞PDFs -> Knowledge Graphs ]()
+- [PyMuPDF4LLM 构建多模态LLM应用](https://zhuanlan.zhihu.com/p/859831262) : 将PDF抽取为llama_index格式或Markdown格式
+
+- Llama index：
+	- [LLM之RAG实战（二十四）| LlamaIndex高级检索（三）：句子窗口检索](https://zhuanlan.zhihu.com/p/681572830)
+    - [LLM之RAG实战（二十二）| LlamaIndex高级检索（一）构建完整基本RAG框架（包括RAG评估）](https://zhuanlan.zhihu.com/p/681532023a)
+    - [AIOps RAG 比赛获奖项目 EasyRAG 深度解读](https://zhuanlan.zhihu.com/p/3758214821)
+
+理想中的PDF处理应当具有 1. 抽取目录结构作为统一的标签  2. 对于不同的子标题之间的结构层次关系应当保持  3.最好还具有表格的处理能力，即可以以类MarkDown形式的方式抽取PDF或者别的文件，保留文本之间的逻辑层级结构，支持不同类型的知识（表格，图像，分点）等处理，
 
 
-理想中的PDF处理应当具有 1. 抽取目录结构作为统一的标签  2. 对于不同的子标题之间的结构层次关系应当保持  3.最好还具有表格的处理能力
 
-
+- [学习型分块（Learned Chunking](https://www.zhihu.com/question/638730143/answer/3628308357)
+- 
 
 
 ##  Knowledge Storage & Split  &  index
@@ -35,7 +57,9 @@
 - RAGA
 - Trulens
 
-## 
+## MultiRoad Recall
+
+[向量+稀疏向量+全文搜索+张量 = 最佳 RAG 搭配 ？](https://zhuanlan.zhihu.com/p/711565943)
 
 
 
@@ -63,12 +87,8 @@ RAG的检索器属于信息检索的领域，不过在于现在的信息检索�
 - 
 
 
-# RAG Method
 
 
-## Paper
-
-- Hierarchical Retrieval-Augmented Generation Model with Rethink for Multi-hop Question Answering: 分层检索
 
 
 ## BLOG 
