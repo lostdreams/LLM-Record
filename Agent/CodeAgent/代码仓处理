@@ -1,0 +1,27 @@
+
+
+- [github的检索](https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax)
+
+
+# zencoder.ai
+
+- [多代码仓检索](https://docs.zencoder.ai/features/multi-repo)
+##  [Repo Grokking](https://docs.zencoder.ai/technologies/repo-grokking):
+
+  -  使用用 Repo-Info 智能体构建上下文，构建一个repo.md作为持久化的上下文，
+### 如何协同工作： 
+
+你在开发新功能时，系统从 Repo-Info 智能体获取基础上下文；如果你在微服务环境中，它会利用多仓库索引理解其他服务的模式；对于大型单仓库，智能导航会专注于相关代码路径。在整个过程中，智能编排确保通过多轮推理验证和优化理解。
+# Devin
+
+
+
+
+# 代码仓处理工具
+
+##  c
+
+- ctag
+- cscope :比ctags更强大，它会创建一个数据库，可以查询“调用这个函数的有哪些函数？”、“这个函数调用了哪些函数？”等。它的输出是文本式的，但可以被脚本解析。
+- 构建compile_commands.json
+- 使用 libclang 或 LibTooling 构建动态知识图谱，: 遍历整个代码仓，解析所有源文件。将函数、全局变量、结构体/联合体/枚举、类型定义等核心元素，以及它们之间的关系（如函数调用、变量引用、类型使用）提取出来，构建一个基础的代码知识图谱（可以存储在图数据库如Neo4j中，或一个简单的关系型数据库/JSON文件中）。这是Agent的长期记忆库。
