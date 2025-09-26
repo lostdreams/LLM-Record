@@ -1,0 +1,258 @@
+
+
+
+# Agent
+
+## 什么是agent 
+
+
+- [能大致讲一下agent的原理吗？](https://www.zhihu.com/question/4838236459/answer/1951966477113602156)
+
+
+**智能体 就是围绕大模型构建的一套“目标导向、具备记忆、能自主调用工具”的系统** , 构建智能体的目标是希望其可以实现多步的复杂任务，自主决策，
+
+但目前agent ， 既缺乏复杂任务的多步决策，也缺乏记忆能力， 目前只能实现调用工具，但在怎么调用工具上，缺少智能， 即绝大部分agent应用最后都变成了规则驱动的
+
+## agent 出现循环调用工具，卡死， 认为原因， 解决办法
+
+
+原因
+
+1. 任务过于复杂，需多次调用工具，llm调用工具后，迷失任务目标
+
+1. 工具输出内容过多
+
+
+1. llm反复调用一个工具，即使工具返回的结果不对，
+
+
+## 能说一下react是指什么呢，
+
+- [Agent开发(一) - ReACT框架详解](https://zhuanlan.zhihu.com/p/1954839068434208201)
+
+
+“Thought → Action → Observation” 的循环。这个格式强制或鼓励模型在生成动作之前或之后插入思考步骤。
+
+
+
+
+## agent 常见的几种设计模式
+
+
+- [智能体工作流的六种设计模式](https://zhuanlan.zhihu.com/p/1941170327955671029)
+
+- [Agent的九种设计模式(图解+代码)](https://zhuanlan.zhihu.com/p/692971105)
+
+
+## 多Agent 为什么效果不好
+
+
+
+
+
+## Agent 落地问题
+
+- agent的能力（基于llm更多选择权和能力 ) 与 可控性不足的问题
+- 复杂问题agent 无法胜任  退化为了 workflow 
+- 
+
+
+
+## 多agent 如何设计
+
+- [关于 multi-agent 的一些记录](https://zhuanlan.zhihu.com/p/1954144220060313488)
+
+- [Claude Code Sub-agent 模式的详解和实践](https://zhuanlan.zhihu.com/p/1940513054916875486)
+
+
+
+## 阿里的deepresearch 的全流程
+
+- [DeepResearch调研](https://zhuanlan.zhihu.com/p/1953917263267758677)
+
+
+## 你对代码仓下agent 或者 swe agent 的看法
+
+1. 不要和模型能力发展趋势做对： 例如构建复杂的符号知识图谱，使用大量的向量检索 检索很难匹配的上，长上下文，模型代码的理解能力都在提高， 另一方面 向量检索 不可能精准（在大规模代码仓，多个代码仓，等等，其最终退化为半关键字检索） ， 符号调用知识图谱不可靠 
+
+1. 代码问题因为有可验证的解， 因此在agent应用上也将很可能成为快速被攻破的地方，目前的AI的算法竞赛已经快要超越人类选手，下一个阶段将会是在可验证的 代码仓 编程上, 在一个提供基础的开发环境上（ 环境的配置可以通过docker ， 加上一部分联网搜索等）** 借助强化学习**
+实现swe ，实现复杂的 代码库重构，issue解决，需求开发任务
+
+
+包括
+    - 1. 自动记录repo内容为自己的检索来源 增量式的加深自己对repo的理解
+
+    - 2. 自己维护一个自己的上下文窗口
+
+    - 3. 自己维护一个笔记记录，不断的更新， 打标签，将标签常驻内存，
+
+
+当然对于repo还有
+    - check 文件
+    - 通过搜索或ctag实现人类类似跳转的能力
+    
+
+reward：
+    1. 记录内容，且 记录精准
+    2. 主动更新内容
+    3. 写出通过编译的代码
+    4. 
+
+
+# 模型架构
+
+## 位置编码 rope
+
+
+## 为什么现在的LLM都是Decoder-only的架构？ 
+
+参考苏剑林博客
+
+
+
+# 为什么transformer的FFN需要先升维再降维？
+
+- [answer](https://www.zhihu.com/question/665731716/answer/3611802917)
+
+## llm训练和推理阶段的 输入到模型输出的全过程 包括最终loss计算
+
+## 分词计算 ，BPE算法
+
+## LLM的激活函数的变化
+
+
+## 从MHA、MQA、GQA到MLA
+
+[苏剑林博博客](https://zhuanlan.zhihu.com/p/700588653)
+
+
+## LLM的padding 
+
+左填充还是右填充
+
+- [LLM padding 细节](https://zhuanlan.zhihu.com/p/675273498)
+
+
+## 从Token到Logits ： LLM中的计算
+
+
+
+- [LLM计算得到的logits或者token在计算CELoss的时候是怎么计算的。](https://zhuanlan.zhihu.com/p/1953853447691547952)
+
+
+- [LLM(decoder-only)在inference的时候可微吗？ 答案 不可以，因为argmax会断开梯度(https://zhuanlan.zhihu.com/p/1953853447691547952)
+
+## 训练参数
+
+- [梯度检查/梯度累积 : LLM 梯度检查点（Gradient Checkpointing）：一文掌握](https://zhuanlan.zhihu.com/p/1954366455685583235)
+
+
+
+
+
+
+
+# RL 强化学习
+
+
+## 教程入门
+- [**图解大模型RLHF系列之：人人都能看懂的PPO原理与源码解读**](https://zhuanlan.zhihu.com/p/677607581)
+- [人人都能看懂的RL-PPO理论知识](https://zhuanlan.zhihu.com/p/7461863937)
+
+
+##  什么是奖励劫持 
+```bash
+
+。理论上，RL 可以应用到任何场景，但如果你的判断能力不强，智能体学到的可能只是噪声。
+
+RL 的一个直接限制就是它可能学到你不希望出现的行为：RL 会尽一切手段去最大化你给予的奖励，所以模型会做你要求它做的事情，而不是你真正想要的。我们称这种现象为奖励劫持（reward hacking），虽然模型本身无辜，但设计奖励机制的人需要承担责任。
+
+一个典型例子：RL 发现《超级马里奥 1》存在一个 30 多年的漏洞：跳跃后，如果你转身，你会在一帧内无敌。由于 RL 的奖励是最大化得分，而更快通关可以获得更高分数，它就利用这个漏洞疯狂刷高分，从而获取更多奖励。
+
+开发者的期望：最大化得分；保持像人类一样玩；不利用漏洞
+开发者实际给的指令：最大化得分
+顺便说一句，这种情况在人类身上也会发生！我们称之为反向激励（Perverse Incentives），本质上和 RL 的奖励劫持是同一个道理。一个著名案例是：英国政府为控制德里毒蛇数量，对每条死蛇提供奖金。起初效果很好，大量毒蛇被杀。但后来人们开始专门养蛇以赚取奖金。
+```
+
+
+
+- RLHF 
+
+
+
+## PPO详解
+
+## ppo算法 手推 和 代码
+
+- [PPO算法逐行代码详解](http://zhuanlan.zhihu.com/p/660971357)
+
+参考[从0开始手写PPO算法（二）](https://zhuanlan.zhihu.com/p/577482337)
+
+
+
+
+## 什么是 ：On-policy 与 Off-policy
+
+## DPO PPO 概念差异
+
+
+
+## grpo 和 ppo 差异
+
+## 提问：PPO中为什么要做clip ratio，主要考虑了哪些因素？
+
+- [answer](https://zhuanlan.zhihu.com/p/25751312482)
+
+
+
+## RL为什么有效
+- [RL为什么有效?
+ 个人认为, RL 与 SFT 的区别在于, SFT 是 token level 的 0/1 奖励, RL 是句子 level 的离散奖励.](https://zhuanlan.zhihu.com/p/26370587517)
+
+
+
+## RL中的KL散度
+
+
+- [KL项起什么作用?](https://zhuanlan.zhihu.com/p/26370587517)
+
+
+## GRPO算法是怎样的， grpo和ppo有什么区别和改进
+- [GRPO算法与 PPO 算法的本质区别是什么？该如何选择？](https://www.zhihu.com/question/12933942086/answer/1919851560382464325)
+
+
+## 为什么GRPO很容易训飞，训到一半reward就很容易突然掉下来？
+
+
+
+
+
+# 推理
+
+## KV cache & 算子  && llm推理全过程
+
+
+- [图解LLM推理流程---Attention算子]
+
+
+
+
+## flash attention
+
+
+
+
+
+# RAG 
+
+## Elsatci search 用过么，说一下
+
+
+
+
+
+
+## RAG未来会消亡么，
+
+
+- [RAG未来的出路](https://zhuanlan.zhihu.com/p/703882032)
