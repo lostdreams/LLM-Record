@@ -1,0 +1,58 @@
+
+
+# 调研
+
+   
+ 
+LLM 代码库 重构 
+ 
+ 
+ 
+ 
+- [LLM-based Multi-Agent System for Intelligent Refactoring of Haskell Code](https://www.confident-ai.com/blog/llm-evaluation-metrics-everything-you-need-for-llm-evaluation)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+BenchMark 和 指标计算
+ 
+1. java的版本切换  Migrationbench: Repository-Level Code Migration Benchmark From 
+ 
+ 
+ 
+2. Benchmarks and Metrics for Evaluations of Code
+Generation: A Critical Review
+24年的综述 比较完整
+正确性在不同层面上被划分为句法接近度、功能正确性、开发可用性、生成稳定性。
+本任务由于无法上机编译测试，重点关注功能正确性（及开发可用性）
+ 
+ 
+文章链接 
+ 
+ 
+ 
+1. https://medium.com/@sunnypatel124555/automated-code-generation-with-large-language-models-llms-0ad32f4b37c8
+ 
+2.  CODEMENV: Benchmarking Large Language Models on Code Migration
+ 
+3.  Using LLMs to Accelerate Code and Data Migration
+4. Here’s how I use LLMs to help me write code : Simon Willison’s Weblog
+5. MANTRA: Enhancing Automated Method-Level Refactoring with Contextual RAG and Multi-Agent LLM Collaboration
+ 
+6. Using LLMs for Library Migration
+7. An Empirical Study on the Code Refactoring Capability of Large Language Models
+8. 
+Challenges to Using LLMs in Code
+Generation and Repair
+ 
+9. 
+Characterizing Python Library Migrations
+ 
+ 
+10 
+Hybrid Intelligence: Marrying Deterministic Code with LLMs for Robust Software Development（ 博客）
+ 
